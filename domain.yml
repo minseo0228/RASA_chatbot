@@ -1,0 +1,184 @@
+version: '3.1'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- affirm
+- answering_banindecent
+- check_nickname
+- deny
+- goodbye
+- greet
+- inform
+- say_hobby
+- say_nickname
+- say_reason_hobby
+- say_when_do_hobby
+- start
+entities:
+- case_when
+- case_clothing
+- case_where
+- case_emotion
+- hobby
+- case_person
+- case_banindecent
+- asked_end
+slots:
+  nickname:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: nickname_form
+        requested_slot: nickname
+  nickname_right:
+    type: bool
+    influence_conversation: true
+    mappings:
+    - type: from_intent
+      intent: affirm
+      value: true
+      conditions:
+      - active_loop: nickname_form
+        requested_slot: nickname_right
+    - type: from_intent
+      intent: deny
+      value: false
+      conditions:
+      - active_loop: nickname_form
+        requested_slot: nickname_right
+  hobby:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: hobby
+  hobby_when:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: hobby_form
+        requested_slot: hobby_when
+  hobby_why:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: hobby_form
+        requested_slot: hobby_why
+  case_where:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: case_where
+  case_when:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: case_when
+  case_person:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: case_person
+  case_emotion:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: case_emotion
+  case_clothing:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: case_clothing
+  case_check:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: case_form
+        requested_slot: case_check
+  case_banindecent:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: case_banindecent
+  asked_end:
+    type: bool
+    influence_conversation: true
+    mappings:
+    - type: from_intent
+      intent: affirm
+      value: true
+    - type: from_intent
+      intent: deny
+      value: false
+responses:
+  utter_ask_nickname:
+  - text: 안녕하세요!! 사용하실 닉네임을 입력해주세요
+  utter_ask_nickname_right:
+  - text: '{nickname}이/가 맞나요??'
+  utter_ask_hobby:
+  - text: 취미가 무엇인가요??
+  utter_ask_hobby_why:
+  - text: 왜 {hobby}을/를 좋아하나요??
+  utter_ask_hobby_when:
+  - text: 보통 언제 {hobby}을/를 하나요??
+  utter_ask_case_where:
+  - text: 어디에서 있었던 일인가요?
+  utter_ask_case_banindecent:
+  - text: 어떤 행위를 하였나요?
+  utter_ask_case_check:
+  - text: '{case_person}이/가 {case_where}에서 {case_when} 그래서 {case_emotion} 맞나요?'
+  utter_ask_case_when:
+  - text: 언제 있었던 일인가요?
+  utter_ask_case_person:
+  - text: 누가 그랬는지 구체적으로 설명해주실래요?
+  utter_ask_case_emotion:
+  - text: 그때 감정이 어땠는지 말해줄 수 있어요?
+  utter_ask_case_clothing:
+  - text: 그때 무슨 옷을 입고 있었나요?
+  utter_fin:
+  - text: 말씀해주셔서 감사합니다. 언제든 찾아주세요.
+  utter_and:
+  - text: 또 어떤 일이 있었나요?
+  utter_end:
+  - text: 그런 일이 있으셨군요. 더 하실 말씀 있으신가요?
+  utter_talk_start:
+  - text: '{nickname}님이 좋아하시는 것에 대해서 너무 잘 말씀해주셔서 감사합니다. 덕분에 제가 {nickname}님에 대해서 조금 더 잘 알게 된 것 같아요 :) 지금부터는 {nickname}님께서 오늘 저에게 해주실 이야기를 처음부터 끝까지 사실 그대로 말씀해주세요.'
+forms:
+  nickname_form:
+    required_slots:
+    - nickname
+    - nickname_right
+  hobby_form:
+    required_slots:
+    - hobby
+    - hobby_why
+    - hobby_when
+  case_form:
+    required_slots:
+    - case_person
+    - case_banindecent
+    - case_where
+    - case_when
+    - case_emotion
+    - case_clothing
+    - case_check
+actions:
+- utter_and
+- utter_end
+- utter_fin
+- utter_talk_start

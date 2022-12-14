@@ -1,0 +1,192 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - 응
+    - 웅
+    - 네
+    - 어
+    - 조아
+    - 좋아
+    - 쪼아
+    - 완전.
+    - 예에
+    - 옙
+    - 얍
+    - 물론
+    - 난 좋아
+    - 개조아
+    - 괜찮네
+    - 나쁘지 않다
+    - 굿
+    - 굳
+    - 오께
+    - 오케이
+    - 오께이
+    - 예압
+    - 얍얍
+    - 예아
+    - ㅇㅋ
+    - ㅇㅇ
+    - 으응
+    - 그렇지
+    - 글치
+    - 동의
+    - 좋네.
+    - 고마워
+    - 감사
+    - 땡큐
+    - 여긴 괜찮네
+    - 응! 고마워
+    - 좋아용
+    - good!
+    - 그래 좋아
+    - 조아조아
+    - 좋은 것 같아!
+    - 응!
+    - 완전
+    - O
+    - yes
+    - 아테네
+- intent: deny
+  examples: |
+    - 아니요
+    - 아닌데요
+    - 아니야
+    - 아니일걸
+    - 아니
+    - No
+    - ㄴㄴ
+    - 아니오
+- intent: start
+  examples: |
+    - 시작
+    - 시작ㄱ
+    - 시작하자
+    - 시작해볼까
+    - 가자
+    - 고
+    - 시작이다
+    - 시작이요
+    - 시이작
+    - start
+- intent: say_hobby
+  examples: |
+    - [야구](hobby)를 좋아합니다
+    - [농구](hobby)가 최고에요
+    - [축구](hobby)를 자주 합니다
+    - [춤](hobby)추는걸 즐겨요
+    - [요리](hobby)를 하면 행복해요
+    - [유튜브시청](hobby)이 취미에요
+    - [독서](hobby)를 즐겨합니다
+    - [배드민턴](hobby)가 좋아요
+    - [배구](hobby)를 하면 신나요
+    - [족구](hobby)가 제일 재미있어요
+    - [수영](hobby) 하는거요
+    - [뜨개질](hobby)하면 마음이 편해요
+    - [게이트볼](hobby)치는 걸 좋아해
+    - [탁구](hobby)보는 것이 좋습니다
+    - [스쿼시](hobby)를 자주 합니다
+    - [헬스](hobby)가 취미입니다
+    - [발야구](hobby)가 정말 재미있어
+    - [피구](hobby)를 합니다
+    - [야구](hobby)를 좋아해요
+    - [야구](hobby)를 좋아해
+    - 재미있어서
+- intent: say_reason_hobby
+  examples: |
+    - 재밌어요
+    - 행복해져요
+    - 웃게해요
+    - 행복해요
+- intent: say_when_do_hobby
+  examples: |
+    - 심심할때
+    - 친구가 물어볼때
+    - 기분전환하고 싶을때
+    - 주말마다 해요
+    - 주말마다 합니다
+- intent: inform
+  examples: |
+    - 민서
+    - 서윤
+    - 지민
+    - 민주
+    - 여솔
+- intent: answering_banindecent
+  examples: |
+    - [민우 오빠](case_person) [검정 모자](case_clothing)를 쓰고 [우리 집](case_where) 내 [몸을 만져서](case_banindecent) 너무 [싫었어요](case_emotion)
+    - [민우 오빠](case_person) [하얀 모자](case_clothing)를 쓰고 [어제](case_when) 손도 만지고 [가슴도 만졌어요](case_banindecent)
+    - [박지원 씨](case_person) [우리 집](case_where) [뽀뽀를 했었고](case_banindecent) 너무 [싫었어요](case_emotion)
+    - [우민](case_person) [어제](case_when) 손도 만지고 [가슴도 만졌어요](case_banindecent) [더러워](case_emotion)
+    - [민우 오빠](case_person) [어제](case_when) 손도 만지고 [엉덩이도 만졌어요](case_banindecent) [끔직했어요](case_emotion)
+    - [민우 오빠](case_person) [어제](case_when) [반바지](case_clothing) [화장실](case_where) [슬펐어요](case_emotion)
+    - [박지원 씨](case_person) [일주일 전](case_when) [귀를 핥았어요](case_banindecent)
+    - [시민 오빠](case_person) [빨간티](case_clothing)를 입고 [집](case_where) 손도 만지고 [가슴도 만졌어요](case_banindecent)
+    - [민우 오빠](case_person) [뽀뽀를 했었고](case_banindecent) [꼬집었어요](case_banindecent)
+    - [박지원 씨](case_person) [집](case_where) [귀를 핥았어요](case_banindecent) [무서웠어요](case_emotion)
+    - [박지원 씨](case_person) 손도 만지고 [검정티](case_clothing) [가슴도 만졌어요](case_banindecent) [무서웠어요](case_emotion)
+    - [시민 오빠](case_person) [거실](case_where) [반팔티](case_clothing) [뽀뽀를 했었고](case_banindecent)
+    - [민우 오빠](case_person) [한달 전](case_when) [귀를 핥았어요](case_banindecent)
+    - [박지원 씨](case_person) [거실](case_where) [손도 만지고](case_banindecent) 가슴도 만졌어요
+    - [박지원 씨](case_person) [가슴을 만졌어요](case_banindecent)
+    - [민우 오빠](case_person) [방](case_where) [긴바지](case_clothing) [뽀뽀를 했었고](case_banindecent) [무서웠어요](case_emotion)
+    - [민우 오빠](case_person) [손도 만지고](case_banindecent) 가슴도 만졌어요 [찝찝했어요](case_emotion)
+    - [박지원 씨](case_person) [방](case_where) [귀를 핥았어요](case_banindecent)
+    - [박지원 씨](case_person) 갑자기 [손을 잡았어요](case_banindecent) [후끈했어요](case_emotion) [찝찝했어요](case_emotion)
+    - [한우 오빠](case_person) [안방](case_where) [다 만졌어요](case_banindecent) [겁났어요](case_emotion)
+    - [한우 오빠](case_person)가 [방](case_where)에서 갑자기 [손도 만지](case_banindecent)고 [가슴도 만졌어요](case_banindecent)
+    - [한우 오빠](case_person)가 [방](case_where)에서 갑자기 [손도 만지고](case_banindecent) [가슴도 만졌어요](case_banindecent)
+    - [민우](case_person)가 [강의실](case_where)에서 [입술을 만졌어요](case_banindecent)
+    - [우민](case_person)이가 [조끼](case_clothing)를 입고 [놀이터](case_where)에서 [다리를 만지고](case_banindecent) [뽀뽀 했어요](case_banindecent)
+    - [민우](case_person)가 [가슴을 올리며](case_banindecent) [손을 만졌어요](case_banindecent) [무서웠어요](case_emotion)
+    - [민우 오빠](case_person)가 [멜빵바지](case_clothing) [막 만져서](case_banindecent) [안 좋았어요](case_emotion)
+    - [박지원 씨](case_person) [후드티](case_clothing) [집](case_where) [귀를 핥아서](case_banindecent) [불편했어요](case_emotion)
+    - [민우 오빠](case_person) [청바지](case_clothing) [안방](case_where) [뽀뽀를 했었고](case_banindecent) 너무 [싫었어요](case_emotion)
+    - [민지 오빠](case_person) [집 거실](case_where) [다리를 만지고](case_banindecent) [싫었어요](case_emotion)
+    - [민우 오빠](case_person) [거실 바닥](case_where) [막 만지고](case_banindecent) [싫었어요](case_emotion)
+    - [민우 오빠](case_person) [빵모자](case_clothing)를 쓰고 [안방](case_where) [뽀뽀를 했었고](case_banindecent) [싫었어요](case_emotion)
+    - [선생님](case_person) [교실](case_where) [속옷을 벗겼어요](case_banindecent) [무서웠어요](case_emotion)
+    - [아빠](case_person) [오전](case_when) [침대 안방](case_where) [어리둥절했어요](case_emotion) [무서웠어요](case_emotion)
+    - [아빠](case_person) [오후](case_when) [침대](case_where) [손을 넣어서](case_banindecent) [아팠어요](case_emotion)
+    - [시아버지](case_person) [몸을 만지기](case_banindecent) [새벽](case_when) [3월](case_when)
+    - [시아버지](case_person) [오른쪽 가슴을 만졌습니다](case_banindecent) [저녁](case_when) [3월](case_when)
+    - [아버지](case_person) [몸을 만지기](case_banindecent) [방학](case_when) [기분 더러웠습니다](case_emotion)
+    - [민우 오빠](case_person)가 [어제](case_when) [손도 만지고](case_banindecent) [가슴도 만졌어요](case_banindecent) 매우 [불편했어요](case_emotion) [거실](case_where)에서 그랬어요
+    - [민우 오빠](case_person)가 [어제](case_when) 갑자기 [손을 만지고](case_banindecent) [가슴을 만졌어요](case_banindecent) 그래서 [무서웠어요](case_emotion) [집](case_where)에서 그랬어요
+    - [민우](case_person)가 [놀이터](case_where)에서 [귀를 핥았어요](case_banindecent) [불편했어요](case_emotion)
+    - [민우 오빠](case_person)가 [어제](case_when) [방](case_where)에서 [뽀뽀를 했었고](case_banindecent) [손을 만졌어요](case_banindecent) 너무 [무서웠어요](case_emotion)
+    - [하얀 모자](case_clothing)를 쓰고 그랬어요 [노란 모자](case_clothing)를 쓰고 있었어요 [회색 모자](case_clothing)를 썼었어요
+    - [바지](case_clothing)를 입고 있었어요 [맨투맨](case_clothing)을 입었어요 [청바지](case_clothing) [슬랙스](case_clothing)
+    - [놀이터](case_where)에서요 [놀이터 앞](case_where)에서 그랬어요 [선생님](case_person)이 [이상했어요](case_emotion)
+    - [선생님](case_person)이 하는 행동이 너무 [불편하고](case_emotion) 약간 좀 [이상하고](case_emotion) [하지 않았으면](case_emotion) 좋겠다고 생각했어요
+    - [맨투맨](case_clothing)을 입은 [민우오빠](case_person)가 [어제](case_when) [가슴을 만졌어요](case_banindecent) 너무 [무서웠어요](case_emotion)
+    - [놀이터](case_where)에서 그랬어요
+    - [박지원씨](case_person)가 [집](case_where)에서 [손을 만졌어요](case_banindecent)

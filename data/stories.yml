@@ -1,0 +1,607 @@
+version: "3.1"
+
+stories:
+- story: interactive_story_1  #case where
+  steps:
+  - intent: start
+  - action: nickname_form
+  - active_loop: nickname_form
+  - slot_was_set:
+    - requested_slot: nickname
+  - slot_was_set:
+    - nickname: 바보
+  - slot_was_set:
+    - requested_slot: nickname_right
+  - slot_was_set:
+    - nickname_right: true
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: hobby_form
+  - active_loop: hobby_form
+  - slot_was_set:
+    - requested_slot: hobby
+  - slot_was_set:
+    - hobby: 야구
+  - slot_was_set:
+    - requested_slot: hobby_why
+  - slot_was_set:
+    - hobby_why: 재미있으니까
+  - slot_was_set:
+    - requested_slot: hobby_when
+  - slot_was_set:
+    - hobby_when: 심심할때
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_talk_start
+  - intent: answering_banindecent
+    entities:
+    - case_person: 민우 오빠
+    - case_when: 어제
+    - case_banindecent: 손을 만지고
+    - case_banindecent: 가슴을 만졌어요
+    - case_emotion: 무서웠어요
+    - case_clothing: 반바지
+  - action: case_form
+  - active_loop: case_form
+  - slot_was_set:
+    - case_when: 어제
+  - slot_was_set:
+    - case_person: 민우 오빠
+  - slot_was_set:
+    - case_emotion: 무서웠어요
+  - slot_was_set:
+    - case_banindecent: 가슴을 만졌어요
+  - slot_was_set:
+    - case_clothing: 반바지
+  - slot_was_set:
+    - requested_slot: case_where
+  - slot_was_set:
+    - case_where: 집
+  - slot_was_set:
+    - requested_slot: case_check
+  - slot_was_set:
+    - case_check: 네
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_end
+  - checkpoint: check_asked_end
+
+- story: interactive_story_2  #case_when
+  steps:
+  - intent: start
+  - action: nickname_form
+  - active_loop: nickname_form
+  - slot_was_set:
+    - requested_slot: nickname
+  - slot_was_set:
+    - nickname: 수산물
+  - slot_was_set:
+    - requested_slot: nickname_right
+  - slot_was_set:
+    - nickname_right: true
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: hobby_form
+  - active_loop: hobby_form
+  - slot_was_set:
+    - requested_slot: hobby
+  - slot_was_set:
+    - hobby: 야구
+  - slot_was_set:
+    - requested_slot: hobby_why
+  - slot_was_set:
+    - hobby_why: 행복해요
+  - slot_was_set:
+    - requested_slot: hobby_when
+  - slot_was_set:
+    - hobby_when: 주말마다 해요
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_talk_start
+  - intent: answering_banindecent
+    entities:
+    - case_person: 민우
+    - case_where: 놀이터
+    - case_banindecent: 귀를 핥았어요
+    - case_emotion: 불편했어요
+    - case_clothing: 검정 모자
+  - action: case_form
+  - active_loop: case_form
+  - slot_was_set:
+    - case_where: 놀이터
+  - slot_was_set:
+    - case_person: 민우
+  - slot_was_set:
+    - case_emotion: 불편했어요
+  - slot_was_set:
+    - case_banindecent: 귀를 핥았어요
+  - slot_was_set:
+    - case_clothing: 검정 모자
+  - slot_was_set:
+    - requested_slot: case_when
+  - slot_was_set:
+    - case_when: 방학
+  - slot_was_set:
+    - requested_slot: case_check
+  - slot_was_set:
+    - case_check: 네
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_end
+  - checkpoint: check_asked_end
+
+- story: interactive_story_3  #case_clothing
+  steps:
+  - intent: start
+  - action: nickname_form
+  - active_loop: nickname_form
+  - slot_was_set:
+    - requested_slot: nickname
+  - slot_was_set:
+    - nickname: 크롱
+  - slot_was_set:
+    - requested_slot: nickname_right
+  - slot_was_set:
+    - nickname_right: true
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: hobby_form
+  - active_loop: hobby_form
+  - slot_was_set:
+    - requested_slot: hobby
+  - slot_was_set:
+    - hobby: 요리
+  - slot_was_set:
+    - requested_slot: hobby_why
+  - slot_was_set:
+    - hobby_why: 재미있어요
+  - slot_was_set:
+    - requested_slot: hobby_when
+  - slot_was_set:
+    - hobby_when: 틈틈이 해요
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_talk_start
+  - intent: answering_banindecent
+    entities:
+    - case_where: 방
+    - case_when: 어제
+    - case_person: 민우 오빠
+    - case_banindecent: 뽀뽀를 했었고
+    - case_banindecent: 손을 만졌어요
+    - case_emotion: 무서웠어요
+  - action: case_form
+  - active_loop: case_form
+  - slot_was_set:
+    - case_where: 방
+  - slot_was_set:
+    - case_when: 어제
+  - slot_was_set:
+    - case_person: 민우 오빠
+  - slot_was_set:
+    - case_emotion: 무서웠어요
+  - slot_was_set:
+    - case_banindecent: 손을 만졌어요
+  - slot_was_set:
+    - requested_slot: case_clothing
+  - slot_was_set:
+    - case_clothing: 하얀 모자
+  - slot_was_set:
+    - requested_slot: case_check
+  - slot_was_set:
+    - case_check: 네
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_end
+  - checkpoint: check_asked_end
+
+- story: interactive_story_4 #case_emotion
+  steps:
+  - intent: start
+  - action: nickname_form
+  - active_loop: nickname_form
+  - slot_was_set:
+    - requested_slot: nickname
+  - slot_was_set:
+    - nickname: 뽀로로
+  - slot_was_set:
+    - requested_slot: nickname_right
+  - slot_was_set:
+    - nickname_right: true
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: hobby_form
+  - active_loop: hobby_form
+  - slot_was_set:
+    - requested_slot: hobby
+  - slot_was_set:
+    - hobby: 피구
+  - slot_was_set:
+    - requested_slot: hobby_why
+  - slot_was_set:
+    - hobby_why: 재미있습니다
+  - slot_was_set:
+    - requested_slot: hobby_when
+  - slot_was_set:
+    - hobby_when: 심심할때 종종 해요
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_talk_start
+  - intent: answering_banindecent
+    entities:
+    - case_when: 어제
+    - case_person: 민우 오빠
+    - case_where: 집
+    - case_banindecent: 손을 만지고
+    - case_banindecent: 가슴을 만졌어요
+    - case_clothing: 반바지
+  - action: case_form
+  - active_loop: case_form
+  - slot_was_set:
+    - case_when: 어제
+  - slot_was_set:
+    - case_person: 민우 오빠
+  - slot_was_set:
+    - case_where: 집
+  - slot_was_set:
+    - case_banindecent: 가슴을 만졌어요
+  - slot_was_set:
+    - case_clothing: 반바지
+  - slot_was_set:
+    - requested_slot: case_emotion
+  - slot_was_set:
+    - case_emotion: 무서웠어요
+  - slot_was_set:
+    - requested_slot: case_check
+  - slot_was_set:
+    - case_check: 네
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_end
+  - checkpoint: check_asked_end
+
+- story: interactive_story_5 #case_person
+  steps:
+  - intent: start
+  - action: nickname_form
+  - active_loop: nickname_form
+  - slot_was_set:
+    - requested_slot: nickname
+  - slot_was_set:
+    - nickname: 포비
+  - slot_was_set:
+    - requested_slot: nickname_right
+  - slot_was_set:
+    - nickname_right: true
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: hobby_form
+  - active_loop: hobby_form
+  - slot_was_set:
+    - requested_slot: hobby
+  - slot_was_set:
+    - hobby: 야구
+  - slot_was_set:
+    - requested_slot: hobby_why
+  - slot_was_set:
+    - hobby_why: 재미있으니까
+  - slot_was_set:
+    - requested_slot: hobby_when
+  - slot_was_set:
+    - hobby_when: 심심할때
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_talk_start
+  - intent: answering_banindecent
+    entities:
+    - case_when: 어제
+    - case_emotion: 싫었어요
+    - case_where: 집
+    - case_banindecent: 손을 만지고
+    - case_banindecent: 가슴을 만졌어요
+    - case_clothing: 청바지
+  - action: case_form
+  - active_loop: case_form
+  - slot_was_set:
+    - case_when: 어제
+  - slot_was_set:
+    - case_emotion: 싫었어요
+  - slot_was_set:
+    - case_where: 집
+  - slot_was_set:
+    - case_banindecent: 가슴을 만졌어요
+  - slot_was_set:
+    - case_clothing: 청바지
+  - slot_was_set:
+    - requested_slot: case_person
+  - slot_was_set:
+    - case_emotion: 민우
+  - slot_was_set:
+    - requested_slot: case_check
+  - slot_was_set:
+    - case_check: 네
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_end
+  - checkpoint: check_asked_end
+
+- story: interactive_story_6 #case_banindecent
+  steps:
+  - intent: start
+  - action: nickname_form
+  - active_loop: nickname_form
+  - slot_was_set:
+    - requested_slot: nickname
+  - slot_was_set:
+    - nickname: 포비
+  - slot_was_set:
+    - requested_slot: nickname_right
+  - slot_was_set:
+    - nickname_right: true
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: hobby_form
+  - active_loop: hobby_form
+  - slot_was_set:
+    - requested_slot: hobby
+  - slot_was_set:
+    - hobby: 야구
+  - slot_was_set:
+    - requested_slot: hobby_why
+  - slot_was_set:
+    - hobby_why: 재미있으니까
+  - slot_was_set:
+    - requested_slot: hobby_when
+  - slot_was_set:
+    - hobby_when: 심심할때
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_talk_start
+  - intent: answering_banindecent
+    entities:
+    - case_emotion: 싫었어요
+    - case_when: 어제
+    - case_where: 집
+    - case_person: 시아버지
+    - case_clothing: 청바지
+  - action: case_form
+  - active_loop: case_form
+  - slot_was_set:
+    - case_when: 어제
+  - slot_was_set:
+    - case_emotion: 싫었어요
+  - slot_was_set:
+    - case_where: 집
+  - slot_was_set:
+    - case_person: 시아버지
+  - slot_was_set:
+    - case_clothing: 청바지
+  - slot_was_set:
+    - requested_slot: case_person
+  - slot_was_set:
+    - case_banindecent: 가슴을 만졌어요
+  - slot_was_set:
+    - requested_slot: case_check
+  - slot_was_set:
+    - case_check: 네
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_end
+  - checkpoint: check_asked_end
+
+- story: end affirm
+  steps:
+  - checkpoint: check_asked_end
+  - intent: affirm
+  - action: utter_and
+
+- story: end deny
+  steps:
+  - checkpoint: check_asked_end
+  - intent: deny
+  - action: utter_fin
+
+- story: finish flow
+  steps:
+  - checkpoint: check_flow_finished
+  - action: utter_fin
+  
+- story: interactive_story_1
+  steps:
+  - intent: start
+  - action: nickname_form
+  - active_loop: nickname_form
+  - slot_was_set:
+    - requested_slot: nickname
+  - slot_was_set:
+    - nickname: 아테네
+  - slot_was_set:
+    - asked_end: true
+  - slot_was_set:
+    - requested_slot: nickname_right
+  - slot_was_set:
+    - nickname_right: true
+  - slot_was_set:
+    - asked_end: true
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: hobby_form
+  - active_loop: hobby_form
+  - slot_was_set:
+    - asked_end: true
+  - slot_was_set:
+    - requested_slot: hobby
+  - slot_was_set:
+    - hobby: 야구
+  - slot_was_set:
+    - requested_slot: hobby_why
+  - slot_was_set:
+    - hobby_why: 재미있어서
+  - slot_was_set:
+    - requested_slot: hobby_when
+  - slot_was_set:
+    - hobby_when: 주말마다 합니다
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_talk_start
+  - intent: answering_banindecent
+    entities:
+    - case_clothing: 맨투맨
+    - case_person: 민우오빠
+    - case_when: 어제
+    - case_banindecent: 가슴을 만졌어요
+    - case_emotion: 무서웠어요
+  - slot_was_set:
+    - case_when: 어제
+  - slot_was_set:
+    - case_person: 민우오빠
+  - slot_was_set:
+    - case_emotion: 무서웠어요
+  - slot_was_set:
+    - case_clothing: 맨투맨
+  - slot_was_set:
+    - case_banindecent: 가슴을 만졌어요
+  - action: case_form
+  - active_loop: case_form
+  - slot_was_set:
+    - case_when: 어제
+  - slot_was_set:
+    - case_person: 민우오빠
+  - slot_was_set:
+    - case_emotion: 무서웠어요
+  - slot_was_set:
+    - case_clothing: 맨투맨
+  - slot_was_set:
+    - case_banindecent: 가슴을 만졌어요
+  - slot_was_set:
+    - requested_slot: case_where
+  - slot_was_set:
+    - case_where: 놀이터
+  - slot_was_set:
+    - requested_slot: case_check
+  - slot_was_set:
+    - case_check: 네
+  - slot_was_set:
+    - asked_end: true
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_end
+  - intent: affirm
+  - slot_was_set:
+    - asked_end: true
+  - action: utter_and
+  - intent: answering_banindecent
+    entities:
+    - case_person: 박지원씨
+    - case_where: 집
+    - case_banindecent: 손을 만졌어요
+  - slot_was_set:
+    - case_where: 집
+  - slot_was_set:
+    - case_person: 박지원씨
+  - slot_was_set:
+    - case_banindecent: 손을 만졌어요
+  - action: utter_end
+  - intent: deny
+  - slot_was_set:
+    - asked_end: false
+  - action: utter_fin
+
+- story: interactive_story_1
+  steps:
+  - intent: start
+  - action: nickname_form
+  - active_loop: nickname_form
+  - slot_was_set:
+    - requested_slot: nickname
+  - slot_was_set:
+    - nickname: 포세이돈
+  - slot_was_set:
+    - asked_end: true
+  - slot_was_set:
+    - requested_slot: nickname_right
+  - slot_was_set:
+    - nickname_right: true
+  - slot_was_set:
+    - asked_end: true
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: hobby_form
+  - active_loop: hobby_form
+  - slot_was_set:
+    - asked_end: true
+  - slot_was_set:
+    - requested_slot: hobby
+  - slot_was_set:
+    - hobby: 야구
+  - slot_was_set:
+    - requested_slot: hobby_why
+  - slot_was_set:
+    - hobby_why: 재미있어서 좋아합니다
+  - slot_was_set:
+    - requested_slot: hobby_when
+  - slot_was_set:
+    - hobby_when: 주말마다 합니다
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_talk_start
+  - intent: answering_banindecent
+    entities:
+    - case_clothing: 맨투맨
+    - case_person: 민우 오빠
+    - case_when: 어제
+    - case_banindecent: 손을 만졌어요
+    - case_emotion: 불편했어요
+  - action: case_form
+  - active_loop: case_form
+  - slot_was_set:
+    - case_when: 어제
+  - slot_was_set:
+    - case_person: 민우 오빠
+  - slot_was_set:
+    - case_emotion: 불편했어요
+  - slot_was_set:
+    - case_clothing: 맨투맨
+  - slot_was_set:
+    - case_banindecent: 손을 만졌어요
+  - slot_was_set:
+    - requested_slot: case_where
+  - slot_was_set:
+    - case_where: 놀이터
+  - slot_was_set:
+    - requested_slot: case_check
+  - slot_was_set:
+    - case_check: 네
+  - slot_was_set:
+    - asked_end: true
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_end
+  - intent: deny
+  - slot_was_set:
+    - asked_end: false
+  - action: utter_fin
