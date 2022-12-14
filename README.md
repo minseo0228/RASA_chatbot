@@ -1,12 +1,14 @@
 # RASA_chatbot
 ## 2022 객체지향언어와 실습 Project
-## 객체지향언어와 실습 Project
 ## 주제 : 피해자 진술 준거 챗봇
 ### RASA 챗봇의 기본 원리를 도식화한 그림입니다. 
 
 <img width="500" alt="RASA" src="https://user-images.githubusercontent.com/103639821/207577706-5daf42f2-ca15-438f-924c-a69816a3f852.png" height="300">
-1. [토크나이저 피처라이저 자료 및 정리본]<https://www.notion.so/RASA-ba1ef38ff4554fe4b61724152acd2944>           
-2. [협업 notion]<https://www.notion.so/RASA-179c4128ea9d48cd80f947e40335d239>
+
+1. [토크나이저 피처라이저 자료 및 정리본](https://www.notion.so/RASA-ba1ef38ff4554fe4b61724152acd2944)  
+
+      
+2. [협업 notion](https://www.notion.so/RASA-179c4128ea9d48cd80f947e40335d239)
 <br/>
 
 ## 개발과정
