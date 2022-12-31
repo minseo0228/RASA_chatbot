@@ -30,6 +30,8 @@
 ## 토큰화 진행
 <img width="423" alt="토큰화" src="https://user-images.githubusercontent.com/103639821/207588201-6fb7490f-e1af-40a8-8940-890be1ca5d43.png">
 토큰화: konlpy - mecab형태소 분석기   
+
+
 피처라이저의 경우 GLove로 사전에 임베딩된 데이터를 불러와 사용하였습니다. 
 
 ## 최종 결과
