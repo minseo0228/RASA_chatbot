@@ -1,6 +1,7 @@
 # RASA_chatbot
 ## 2022 객체지향언어와 실습 Project
-## 주제 : 피해자 진술 준거 챗봇
+## 주제 : python 3.8, Rasa 3.1 기반 한국어 성폭력 피해자 진술 준거 챗봇
+주어진 시나리오와 데이터셋을 이용
 ### RASA 챗봇의 기본 원리를 도식화한 그림입니다. 
 
 <img width="500" alt="RASA" src="https://user-images.githubusercontent.com/103639821/207577706-5daf42f2-ca15-438f-924c-a69816a3f852.png" height="300">
@@ -28,7 +29,7 @@
             
 ## 토큰화 진행
 <img width="423" alt="토큰화" src="https://user-images.githubusercontent.com/103639821/207588201-6fb7490f-e1af-40a8-8940-890be1ca5d43.png">
-토큰화는 Mecab을 이용하였습니다.     
+토큰화: konlpy - mecab형태소 분석기   
 피처라이저의 경우 GLove로 사전에 임베딩된 데이터를 불러와 사용하였습니다. 
 
 ## 최종 결과
